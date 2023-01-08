@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+<!--Navbar-->
+<nav class="flex flex-row-reverse p-4 backdrop-blur-md shadow-md w-full fixed mx-auto justify-around">
+        <div id="logo"><h1 class="text-2xl ">CH</h1></div>
+
+        <div class="flex flex-row list-none space-x-6">
+            <li class="text-black cursor-grab hover:text-ungut">Homepage</li>
+            <li class="text-black cursor-grab hover:text-ungut"><h1>Profile</h1></li>
+            <li class="text-black cursor-grab hover:text-ungut">Contact Us</li>
+        </div>
+</nav>
+<!--End-->
+
+<!--Jumbotron-->
+<section id="jumbotron" class=" h-auto p-6 pb-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex flex-row">
+        <div class=" w-screen ml-22 space-y-4 mt-18 ">
+            <h1 class="text-8xl flex flex-col ">Creative Hub</h1>
+            <h2 class="text-justify flex flex-col text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint corporis vel beatae iste doloribus, laborum, unde id laudantium temporibus </h2>
+
+            <button class="btn group flex items-center bg-transparent text-xl font-thin tracking-widest text-white">
+                <span>Click me!</span>
+            </button>
+        </div>
+        <img src="./assets/Mind map-bro.png" class="" alt="mindmap">
+</section>
+<!--End-->
+
+<!--Content-->
+<div class=" content flex justify-center items-center h-auto">
+        <div x-data="setup()">
+            <ul class="flex justify-center items-center my-4">
+                <template x-for="(tab, index) in tabs" :key="index">
+                    <li class="cursor-pointer pb-4 px-3 text-biru border-b-2"
+                        :class="activeTab===index ? 'text-ungu border-black' : ''" @click="activeTab = index"
+                        x-text="tab"></li>
+                </template>
+            </ul>
+    
+            <div class="w-auto bg-white mb-10 text-center mx-auto border">
+                <div x-show="activeTab===0">
+                    <section id="about" class="mt-10 w-screen flex flex-row ">
+                        <div class="flex-row mx-auto">
+                            <div class="flex flex-col ml-24 mt-4 text-black p-5 text-center">
+                                <h1 class="font-semibold text-4xl">What is Creative Hub ?</h1>
+                            </div>
+                            <div class=" card text-justify mt-14 ml-24 text-black p-9">
+                                <h2 class="w-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum officia quod culpa architecto tenetur, at numquam voluptatem omnis in rem asperiores reprehenderit ducimus enim porro consectetur provident facere tempora quos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iure doloremque possimus cupiditate tempore repudiandae provident aliquid, quasi praesentium. Consequuntur iste voluptatum in illum minima neque velit nisi quibusdam. Deleniti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo quis quo, minima eos, impedit possimus alias reprehenderit eligendi dolorem numquam aliquid quaerat, deserunt voluptatum quos temporibus. Nostrum quae facere consectetur! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id cumque sequi error, itaque sint consequatur nisi iure incidunt atque obcaecati ullam quod 
+
+                                    
+                                </h2>
+                            </div>
+                        </div>
+                        <img src="./assets/Collab-pana.png" alt="collab">
+                    </section>
+                </div>
+
+                
+                <div x-show="activeTab===2"><div id="team" class="section pt-2 w-screen pb-5 md:pt-2">
+                    <div class="container xl:max-w-6xl mx-auto px-4">
+                        <!-- section header -->
+                        <header class="text-center mx-auto mb-3">
+                            <h2 class="text-2xl leading-normal mb-4 font-bold dark:text-black">
+                                <span class="font-light">Our</span>Team
+                            </h2>
+                        </header>
+                        <!-- end section header -->
+                        <!-- row -->
+                        <div class="flex flex-wrap flex-row -mx-4 justify-center">
+                            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                                <div class="overflow-hidden">
+                                    <!-- team block -->
+                                    <div class="overflow-hidden px-6">
+                                        <img src="./assets/5927577.jpg" class="max-w-full h-auto mx-auto rounded-full">
+                                    </div>
+                                    <div class="pt-6 text-center">
+                                        <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
+                                        <p class="text-gray-500 leading-relaxed font-light">Founder CEO</p>
+                                    </div>
+                                </div>
+                                <!-- end team block -->
+                            </div>
+                            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                                <!-- team block -->
+                                <div class="overflow-hidden">
+                                    <div class="overflow-hidden px-6">
+                                        <img src="./assets/5927579.jpg" class="max-w-full h-auto mx-auto rounded-full ">
+                                    </div>
+                                    <div class="pt-6 text-center">
+                                        <p class="text-lg leading-normal font-bold mb-1">Sarah Daeva</p>
+                                        <p class="text-gray-500 leading-relaxed font-light">Marketing</p>
+                                    </div>
+                                </div>
+                                <!-- end team block -->
+                            </div>
+                            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                                <!-- team block -->
+                                <div class="overflow-hidden">
+                                    <div class="overflow-hidden px-6">
+                                        <img src="./assets/5927578.jpg" class="max-w-full h-auto mx-auto rounded-full ">
+                                    </div>
+                                    <div class="pt-6 text-center">
+                                        <p class="text-lg leading-normal font-bold mb-1">Daniel Emo</p>
+                                        <p class="text-gray-500 leading-relaxed font-light">Sales manager</p>
+                                    </div>
+                                </div>
+                                <!-- end team block -->
+                            </div>
+                            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                                <!-- team block -->
+                                <div class="overflow-hidden">
+                                    <div class="overflow-hidden px-6">
+                                        <img src="./assets/5927580.jpg" class="max-w-full h-auto mx-auto rounded-full">
+                                    </div>
+                                    <div class="pt-6 text-center">
+                                        <p class="text-lg leading-normal font-bold mb-1">Toni Lana</p>
+                                        <p class="text-gray-500 leading-relaxed font-light">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                                <!-- end team block -->
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End-->
+
+<!--Footer-->
+<footer class="p-4 bg-white shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022. All Rights Reserved.
+    </span>
+        <ul class="flex flex-wrap items-center mt-3 sm:mt-0">
+            <li>
+                 <p class="mr-4 text-sm text-gray-500 dark:text-gray-400">About</p>
+            </li>
+            <li>
+                <p class="mr-4 text-sm text-gray-500 dark:text-gray-400">Privacy Policy</p>
+            </li>
+            <li>
+                <p class="mr-4 text-sm text-gray-500 dark:text-gray-400">Licensing</p>
+            </li>
+            <li>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Contact</p>
+            </li>
+            </ul>
+</footer>
+<!--End-->
+
+<script>
+        function setup() {
+        return {
+          activeTab: 0,
+          tabs: [
+              "About us",
+              "division",
+              "Team",
+          ]
+        };
+      };
+</script>
+
+</body>
+</html>
